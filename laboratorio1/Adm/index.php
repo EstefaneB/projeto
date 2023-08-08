@@ -82,7 +82,9 @@
 </head>
 <body>
     <div class="sidebar">
+        <a href="../Funcionario/cadFunc.php"><i class="fas fa-users"></i> Castrar Funcionarios</a>
         <a href="../Funcionario/listaFunc.php"><i class="fas fa-users"></i> Gerenciar Funcionários</a>
+        <a href="../Empresa/cadEmpresa.php"><i class="fas fa-building"></i> Castrar Empresas</a>
         <a href="../Empresa/listaEmpresa.php"><i class="fas fa-building"></i> Gerenciar Empresas</a>
     </div>
 

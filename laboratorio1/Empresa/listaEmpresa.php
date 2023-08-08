@@ -80,11 +80,8 @@
 </head>
 <body>
 <div class="sidebar">
-  <a href="../Adm/index.php"><i class="fas fa-users"></i> Gerenciar Administradores</a>
-  <a href="../Funcionario/listaFunc.php"><i class="fas fa-users"></i> Gerenciar Funcionários</a>
-  <a href="../Cliente/listaCliente.php"><i class="fas fa-users-cog"></i> Gerenciar Clientes</a>
-  <a href="../Servico/listaServico.php"><i class="fas fa-cogs"></i> Gerenciar Serviços</a>
-    </div>
+  <a href="../Adm/index.php"><i class="fas fa-users"></i> Perfil do Administrador</a>
+</div>
 
     <div class="content">
         <h1 style="text-align: center; color: #8474A1;">Perfil da Empresa</h1>

@@ -81,10 +81,8 @@
 </head>
 <body>
   <div class="sidebar">
-      <a href="../Adm/index.php"><i class="fas fa-users"></i> Gerenciar Administradores</a>
-      <a href="../Cliente/listaCliente.php"><i class="fas fa-users-cog"></i> Gerenciar Clientes</a>
-      <a href="../Servico/listaServico.php"><i class="fas fa-cogs"></i> Gerenciar Serviços</a>
-      <a href="../Empresa/listaEmpresa.php"><i class="fas fa-building"></i> Gerenciar Empresas</a>
+      <a href="../Adm/index.php"><i class="fas fa-users"></i> Painel do Administrador</a>
+      
     </div>
 
   <div class="content">
@@ -111,7 +109,6 @@
                   <th>NOME</th>
                   <th>TELEFONE</th>
                   <th>ENDEREÇO</th>
-                  <th>EMAIL</th>
                   <th>CPF</th>
                   <th>ALTERAR</th>
                   <th>EXCLUIR</th>
@@ -124,7 +121,6 @@
                     <td><?php echo $value['nome'] ?></td>
                     <td><?php echo $value['telefone'] ?></td>
                     <td><?php echo $value['endereco'] ?></td>
-                    <td><?php echo $value['email'] ?></td>
                     <td><?php echo $value['cpf'] ?></td>
                     <td>
                       <form method="POST" action="altFunc.php">

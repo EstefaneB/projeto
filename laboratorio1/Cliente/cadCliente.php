@@ -1,3 +1,20 @@
+<?php
+include '../conexao.php';
+
+$id = $_GET['id']; // Recupera o ID da empresa da URL
+
+$sql = "SELECT * FROM empresa WHERE id = :id";
+$stmt = $conexao->prepare($sql);
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$empresa = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$empresa) {
+    echo "Empresa não encontrada.";
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +32,11 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #149bc2;
+            background-color: <?php echo $empresa['cor2']; ?>;
         }
 
         .container {
-            background-color: white;
+            background-color: <?php echo $empresa['cor1']; ?>;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -43,7 +60,7 @@
         }
         
         input[type="submit"] {
-            background-color: #8474A1;
+            background-color: green;
             color: white;
             border: none;
             padding: 10px;
@@ -54,7 +71,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>CADASTRO</h2>
+        <h2>CADASTRO DO CLIENTE</h2>
         <form action="crudCliente.php" method="GET">
 
             <label for="nome">Nome:</label>

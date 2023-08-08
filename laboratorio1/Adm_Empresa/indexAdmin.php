@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<style type="text/css">
+
+  <style type="text/css">
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -79,30 +81,34 @@
     </style>
 </head>
 <body>
+    <div class="sidebar">
+        <a href="../Cliente/listaCliente.php"><i class="fas fa-users-cog"></i> Gerenciar Clientes</a>
+        <a href="../Servico/listaServico.php"><i class="fas fa-cogs"></i> Gerenciar Serviços</a>
+    </div>
+
     <div class="content">
-        <h1 style="text-align: center; color: #8474A1;">Perfil dos Serviços</h1>
-<?php 
-/*
- * Melhor prática usando Prepared Statements
- * 
- */
-  require_once('conexao.php');
-   
-  $retorno = $conexao->prepare('SELECT * FROM servico');
-  $retorno->execute();
+        <h1 style="text-align: center; color: #8474A1;">Perfil do admin</h1>
+        
 
-?> 
+        <?php 
+            /*
+            * Melhor prática usando Prepared Statements
+            * 
+            */
+            require_once('conexao.php');
+            
+            $retorno = $conexao->prepare('SELECT * FROM adm_empresa');
+            $retorno->execute();
 
-<div class="container mt-3">
+        ?> 
+
+        <div class="container mt-3">
             <table class="custom-table">
               <thead>
                 <tr>
                   <th>ID</th>
                   <th>NOME</th>
-                  <th>PREÇO</th>
-                  <th>ALTERAR</th>
-                  <th>EXCLUIR</th>
-
+ 
                 </tr>
               </thead>
               <tbody>
@@ -110,25 +116,10 @@
                   <tr>
                     <td><?php echo $value['id'] ?></td>
                     <td><?php echo $value['nome'] ?></td>
-                    <td><?php echo $value['preco'] ?></td>
-                    <td>
-                      <form method="POST" action="altServico.php">
-                        <input name="id" type="hidden" value="<?php echo $value['id']; ?>" />
-                        <button class="custom-button" name="alterar" type="submit">Alterar</button>
-                      </form>
-                    </td>
-                    <td>
-                      <form method="GET" action="crudServico.php">
-                        <input name="id" type="hidden" value="<?php echo $value['id']; ?>" />
-                        <button class="custom-button" name="excluir" type="submit">Excluir</button>
-                      </form>
-                    </td>
-                      
                   </tr>
                 <?php } ?>
               </tbody>
             </table>
-            <a class="custom-button" href="cadServico.php" style="text-decoration: none; position: absolute; margin-top: 20px;">Adicionar</a>
           </div>
 
     </div>

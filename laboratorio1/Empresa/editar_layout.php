@@ -32,5 +32,11 @@ if (!$empresa) {
 
         <button type="submit" name="salvar_cores">Salvar Cores</button>
     </form>
+    
+    <?php
+    if (isset($_GET['success'])) {
+        echo 'Sucessfully';
+    }
+    ?>
 </body>
 </html>

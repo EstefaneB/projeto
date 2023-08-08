@@ -14,6 +14,8 @@ if (isset($_POST['salvar_cores'])) {
 
     if ($stmt->execute()) {
         echo "Cores padrão salvas com sucesso!";
+        header("Location: index_empresa.php?id=$id");
+        exit();
     } else {
         echo "Erro ao salvar as cores padrão.";
     }

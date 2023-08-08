@@ -79,12 +79,6 @@
     </style>
 </head>
 <body>
-  <div class="sidebar">
-    <a href="../Adm/index.php"><i class="fas fa-users"></i> Gerenciar Administradores</a>
-    <a href="../Funcionario/listaFunc.php"><i class="fas fa-users"></i> Gerenciar Funcionários</a>
-    <a href="../Servico/listaServico.php"><i class="fas fa-cogs"></i> Gerenciar Serviços</a>
-    <a href="../Empresa/listaEmpresa.php"><i class="fas fa-building"></i> Gerenciar Empresas</a>
-  </div>
 
     <div class="content">
         <h1 style="text-align: center; color: #8474A1;">Perfil do Clientes</h1>

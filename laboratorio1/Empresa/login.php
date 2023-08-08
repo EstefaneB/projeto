@@ -1,3 +1,21 @@
+<?php
+include '../conexao.php';
+
+$id = $_GET['id']; // Recupera o ID da empresa da URL
+
+$sql = "SELECT * FROM empresa WHERE id = :id";
+$stmt = $conexao->prepare($sql);
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$empresa = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$empresa) {
+    echo "Empresa não encontrada.";
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +30,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color:#6EC6CA;
+            background-color: <?php echo $empresa['cor2']; ?>;
             color: white;
             display: flex;
             justify-content: center;
@@ -23,7 +41,7 @@
         .login-container {
             width: 300px;
             padding: 20px;
-            background-color: #05585C;
+            background-color: <?php echo $empresa['cor1']; ?>;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
         }
@@ -37,7 +55,7 @@
 
         .button {
             color: white;
-            background-color: #8474A1;
+            background-color: green;
             border: none;
             text-align: center;
             padding: 10px;
@@ -64,7 +82,7 @@
 <body>
     
     <div class="login-container">
-        <h2>Login do Cliente</h2>
+        <h2>Login </h2>
         <form method="POST" action="../Cliente/loginCliente.php">
             <div>
                 <p>Nome: </p>

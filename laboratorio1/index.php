@@ -93,7 +93,6 @@
     <section class="section-div">
     <div>
         <h2>Bem vindo à Empreenda Connect!</h2>
-        <h2 class="digitando"> web</h2>
         <p>Na procura de um site para promover visibilidade do seu negocio? Aqui podemos te ajudar com layouts e templates próprios para sua empresa</p>
     </div>
     <img src="microempresa.png" alt="">

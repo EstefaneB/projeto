@@ -1,3 +1,20 @@
+<?php
+include 'conexao.php';
+
+$id = $_GET['id']; // Recupera o ID da empresa da URL
+
+$sql = "SELECT * FROM empresa WHERE id = :id";
+$stmt = $conexao->prepare($sql);
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$empresa = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$empresa) {
+    echo "Empresa não encontrada.";
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,13 +32,13 @@
             text-decoration: none;
         }
         body{
-            background-color: white;
+            background-color: <?php echo $empresa['cor2']; ?>;
             max-width: 1200px;
             margin: 0;
         }
         header{
             width: 114%;
-            background-color: #8474A1;
+            background-color: <?php echo $empresa['cor1']; ?>;
             padding: 10px;
             display: flex;
             align-items: center;
@@ -75,7 +92,7 @@
             border: 2px solid white;
         }
         .rodape {
-            background-color: #8474A1;
+            background-color: <?php echo $empresa['cor1']; ?>;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -88,20 +105,20 @@
 </head>
 <body>
     <header>
-        <h1> Empreenda <span> Connect</span></h1>
+        <h1> <?php echo $empresa['nome_fantasia']; ?> </h1>
         <nav>
             <ul class="navegacao-primaria">
-                <li><a href="../Cliente/cadCliente.php">Cadastrar</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="../Servico/indexServico.php">Servico</a></li>   
+                <li><a href="../Cliente/cadCliente.php?id=<?php echo $id; ?>">Cadastrar</a></li>
+                <li><a href="login.php?id=<?php echo $id; ?>">Login</a></li>
+                <li><a href="../Servico/listar_servicos.php?id=<?php echo $id; ?>">Servico</a></li>   
             </ul>
         </nav>
     </header>
     <section class="section-div">
     <div>
-        <h2>Bem vindo à Empreenda Connect!</h2>
-        <h2 class="digitando"> web</h2>
-        <p>Na procura de um site para promover visibilidade do seu negocio? Aqui podemos te ajudar com layouts e templates próprios para sua empresa</p>
+        <h2>Bem vindo à Empresa <?php echo $empresa['nome_fantasia']; ?> </h2>
+        <!-- <h2 class="digitando"> web</h2>
+        <p>Na procura de um site para promover visibilidade do seu negocio? Aqui podemos te ajudar com layouts e templates próprios para sua empresa</p> -->
     </div>
     </section>
     <footer class="rodape">

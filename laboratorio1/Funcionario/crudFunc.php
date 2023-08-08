@@ -9,6 +9,7 @@ if (isset($_GET['cadastrar'])){
         $senha = $_GET["senha"];
         $endereco = $_GET["endereco"];
         $cpf = $_GET["cpf"];
+        
 
         ##codigo SQL
          $sql = "INSERT INTO funcionario(nome,endereco,senha,telefone,cpf) 

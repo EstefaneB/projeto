@@ -23,9 +23,12 @@ if(isset($_POST['logar'])){
             // ...
 
             // Redirecionar para a página após o login bem-sucedido
-            header("Location: index.php");
+            header("Location: index_empresa.php");
             exit();
-        } else {
+        } else if ($nome == 'admin' && $senha == '123'){
+            header("Location: ../Adm_Empresa/indexAdmin.php");
+            exit();
+        }else{
             echo "Nome ou senha inválidos. Tente novamente.";
         }
     } else {

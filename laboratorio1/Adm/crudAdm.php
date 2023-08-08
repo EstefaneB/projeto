@@ -60,7 +60,7 @@ if(isset($_POST['update'])){
             echo " <strong>OK!</strong> o aluno
              $nome foi Alterado com sucesso!!!"; 
 
-            echo " <button class='button'><a href='index.php'>voltar</a></button>";
+            echo " <button class='button'><a href='../index.php'>voltar</a></button>";
         }
 
 }        
