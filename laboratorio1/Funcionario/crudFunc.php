@@ -39,7 +39,7 @@ if(isset($_POST['update'])){
     
    
       ##codigo sql
-    $sql = "UPDATE  adm SET nome= :nome,  endereco= :endereco,
+    $sql = "UPDATE  funcionario SET nome= :nome,  endereco= :endereco,
      telefone= :telefone, senha= :senha, cpf= :cpf  WHERE id= :id ";
    
     ##junta o codigo sql a conexao do banco
@@ -62,7 +62,7 @@ if(isset($_POST['update'])){
             echo " <strong>OK!</strong> o aluno
              $nome foi Alterado com sucesso!!!"; 
 
-            echo " <button class='button'><a href='index.php'>voltar</a></button>";
+            echo " <button class='button'><a href='listaFunc.php'>voltar</a></button>";
         }
 
 }        
@@ -81,7 +81,7 @@ if(isset($_GET['excluir'])){
             echo " <strong>OK!</strong> o aluno
              $id foi excluido!!!"; 
 
-            echo " <button class='button'><a href='listaalunos.php'>voltar</a></button>";
+            echo " <button class='button'><a href='listaFunc.php'>voltar</a></button>";
         }
 
 }

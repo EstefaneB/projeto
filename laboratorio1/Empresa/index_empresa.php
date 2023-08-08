@@ -3,6 +3,10 @@ include 'conexao.php';
 
 $id = $_GET['id']; // Recupera o ID da empresa da URL
 
+session_start();
+$_SESSION['id_empresa'] = $id; // Supondo que você já tenha obtido o $id da página da empresa.
+
+
 $sql = "SELECT * FROM empresa WHERE id = :id";
 $stmt = $conexao->prepare($sql);
 $stmt->bindParam(':id', $id, PDO::PARAM_INT);

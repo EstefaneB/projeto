@@ -91,6 +91,8 @@ if (!$empresa) {
 
             <label for="email">Email:</label>
             <input type="text" name="email" required>
+
+            <input type="hidden" name="id_empresa" value="<?php echo $id; ?>">
             
             <input type="submit" name="cadastrar" value="Cadastrar">
         </form>

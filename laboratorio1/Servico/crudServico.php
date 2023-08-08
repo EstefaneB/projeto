@@ -55,7 +55,7 @@ if(isset($_POST['update'])){
             echo " <strong>OK!</strong> o aluno
              $nome foi Alterado com sucesso!!!"; 
 
-            echo " <button class='button'><a href='index.php'>voltar</a></button>";
+            echo " <button class='button'><a href='listaServico.php'>voltar</a></button>";
         }
 
 }        
@@ -74,7 +74,7 @@ if(isset($_GET['excluir'])){
             echo " <strong>OK!</strong> o aluno
              $id foi excluido!!!"; 
 
-            echo " <button class='button'><a href='listaalunos.php'>voltar</a></button>";
+            echo " <button class='button'><a href='listaServico.php'>voltar</a></button>";
         }
 
 }

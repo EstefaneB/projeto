@@ -82,7 +82,7 @@
 </head>
 <body>
     <header>
-        <h1> Empreenda <span> Connect</span></h1>
+        <h1> LabWeb <span> tech</span></h1>
         <nav>
             <ul class="navegacao-primaria">
                 <li><a href="login.php">Login</a></li>
@@ -92,7 +92,7 @@
     </header>
     <section class="section-div">
     <div>
-        <h2>Bem vindo à Empreenda Connect!</h2>
+        <h2>Bem vindo à LabWebtech!</h2>
         <p>Na procura de um site para promover visibilidade do seu negocio? Aqui podemos te ajudar com layouts e templates próprios para sua empresa</p>
     </div>
     <img src="microempresa.png" alt="">

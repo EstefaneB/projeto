@@ -60,7 +60,7 @@ if(isset($_POST['update'])){
             echo " <strong>OK!</strong> o aluno
              $nome foi Alterado com sucesso!!!"; 
 
-            echo " <button class='button'><a href='../index.php'>voltar</a></button>";
+            echo " <button class='button'><a href='index.php'>voltar</a></button>";
         }
 
 }        
@@ -79,7 +79,9 @@ if(isset($_GET['excluir'])){
             echo " <strong>OK!</strong> o aluno
              $id foi excluido!!!"; 
 
-            echo " <button class='button'><a href='index.php'>voltar</a></button>";
+             echo " <button class='button'style='height: 70px; width: 200px; background-color: gray; border-radius: 20px; border-color: transparent; margin-bottom: 50px'><a href='index.php'>voltar</a></button>";
+
+            
         }
 
 }

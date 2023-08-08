@@ -10,6 +10,7 @@ if (isset($_GET['cadastrar'])){
         $endereco = $_GET["endereco"];
         $cpf = $_GET["cpf"];
         $email = $_GET["email"];
+        $id_empresa = $_GET["id_empresa"];
         
        /* echo "$nome";*/
 
@@ -23,9 +24,11 @@ if (isset($_GET['cadastrar'])){
         ##executa o sql no banco de dados
         if($sqlcombanco->execute())
             {
+
                 echo " <strong>OK!</strong> o aluno
-                $nome foi Incluido com sucesso!!!"; 
-                echo " <button class='button'><a href='index.php'>voltar</a></button>";
+                $nome foi Incluido com sucesso!!!";
+                echo "<button class='button'><a href='../Empresa/index_Empresa.php?id=" . $id_empresa . "'>voltar</a></button>";
+
             }
         }
 #######alterar
@@ -85,7 +88,8 @@ if(isset($_GET['excluir'])){
             echo " <strong>OK!</strong> o aluno
              $id foi excluido!!!"; 
 
-            echo " <button class='button'><a href='listaalunos.php'>voltar</a></button>";
+            echo " <button class='button'style='height: 70px; width: 200px; background-color: gray; border-radius: 20px; border-color: transparent; margin-bottom: 50px'><a href='index.php'>voltar</a></button>";
+            
         }
 
 }
